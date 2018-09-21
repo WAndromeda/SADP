@@ -22,7 +22,7 @@ int main(){
     int n, m;
     setN(n);
     setM(m);
-    bool com;
+    int com;
     cout << "Какой тип данных для ввода вы хотите использовать: 0 - целое число | 1 - вещественное число | 2 - символьный тип: ";
     cin >> com;
     switch(com){
@@ -57,18 +57,34 @@ int main(){
 }
 
 void setN(int& n){
+    bool flag;
     cout << "Введите количество строк матрицы: ";
-    cin >> n;
+    do{
+        flag = false;
+        cin >> n;
+        if (n < 1 || n > 100){
+            flag = true;
+            cout << "Повторите ввод: ";
+        }
+    }while(flag);
 }
 
 void setM(int& m){
+    bool flag;
     cout << "Введите количество строк матрицы: ";
-    cin >> m;
+    do{
+        flag = false;
+        cin >> m;
+        if (m < 1 || m > 50){
+            flag = true;
+            cout << "Повторите ввод: ";
+        }
+    }while(flag);
 }
 
 template <typename T>
 void inPut(T** array, int n, int m){
-    cout << "Введите " << n << " строк(-и, -у) и " << m << " столбцов(-ец, -ца) (Ввод по строкам:)" << endl;
+    cout << "Введите " << n << " строк(-и, -у) и " << m << " столбцов(-ец, -ца) (Ввод по строкам)" << endl;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             cin >> array[i][j];

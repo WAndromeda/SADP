@@ -47,24 +47,40 @@ int main(){
 }
 
 void setN(int& n){
+    bool flag;
     cout << "¬ведите количество строк матрицы: ";
-    cin >> n;
+    do{
+        flag = false;
+        cin >> n;
+        if (n < 1 || n > 100){
+            flag = true;
+            cout << "ѕовторите ввод: ";
+        }
+    }while(flag);
 }
 
 void setM(int& m){
+    bool flag;
     cout << "¬ведите количество строк матрицы: ";
-    cin >> m;
+    do{
+        flag = false;
+        cin >> m;
+        if (m < 1 || m > 50){
+            flag = true;
+            cout << "ѕовторите ввод: ";
+        }
+    }while(flag);
 }
 
 void inPut(int** array, int n, int m){
-    cout << "¬ведите " << n << " строк(-и, -у) и " << m << " столбцов(-ец, -ца) (¬вод по строкам:)" << endl;
+    cout << "¬ведите " << n << " строк(-и, -у) и " << m << " столбцов(-ец, -ца) (¬вод по строкам)" << endl;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             cin >> array[i][j];
 }
 
 void inPut(string** array, int n, int m){
-    cout << "¬ведите " << n << " строк(-и, -у) и " << m << " столбцов(-ец, -ца) (¬вод по строкам:)" << endl;
+    cout << "¬ведите " << n << " строк(-и, -у) и " << m << " столбцов(-ец, -ца) (¬вод по строкам)" << endl;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             cin >> array[i][j];

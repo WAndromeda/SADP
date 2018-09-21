@@ -8,7 +8,7 @@ double* search(double*, double, int);
 
 int main(){
     setlocale(LC_ALL, "Russian");
-    bool k;
+    short int k;
         do {
             int n;
             double x;
@@ -18,7 +18,7 @@ int main(){
                 cin >> n;
                 if (n > 100 || n < 1) {
                     k = true;
-                    cout << "Повторите ввод";
+                    cout << "Повторите ввод\n";
                 }
             }while (k);
             double* array = new double[n];
@@ -37,7 +37,7 @@ int main(){
             }
             cout << "\nПовторить ввод (1/0): ";
             cin >> k;
-        }while(k == true);
+        }while(k);
 }
 
 void inputArray(double* array, int n){

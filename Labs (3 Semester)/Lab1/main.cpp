@@ -1,14 +1,14 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 #include <string>
 using namespace std;
 
 double check();
-bool checkBool();
 
 int main(){
     setlocale(LC_ALL, "Russian");
-    bool k;
+    short int k;
         do {
             double *input = new double[2];
             double *point = new double[2];
@@ -31,16 +31,15 @@ int main(){
 }
 
 double check(){
-    string str;
-    bool flag = true;
-    for (auto i : str){
-
-    }
-}
-
-bool checkBool(){
-    string str;
-    for (auto i : str){
-
-    }
+    double str;
+    bool flag;
+    do{
+        flag = false;
+        cin >> str;
+        if (str <= 0){
+            flag = true;
+            cout << "Повторите ввод: ";
+        }
+    }while(flag);
+    return str;
 }

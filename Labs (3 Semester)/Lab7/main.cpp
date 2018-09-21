@@ -11,15 +11,31 @@ void outPut(double*, int, double);
 
 int main(){
     setlocale(LC_ALL, "Russian");
+    bool flag;
     double* array;
     double b;
     cout << "Высчитывание определённого интеграла \"Методом правых прямоугольников\"" << endl;
     cout << "Введите параметр: ";
-    cin >> b;
-    cout << "Введите точность: ";
+    do{
+        flag = false;
+        cin >> b;
+        if (b <= 0 ){
+            flag = true;
+            cout << "Повторите ввод: ";
+        }
+    }while(flag);
     int n;
+    cout << "Введите точность: ";
+
+    do{
+        flag = false;
+        cin >> n;
+        if (n <= 0 ){
+            flag = true;
+            cout << "Повторите ввод: ";
+        }
+    }while(flag);
     double sum = 0;
-    cin >> n;
     array = integral(0.0, b, n, sum);
     outPut(array, n, sum);
     return 0;

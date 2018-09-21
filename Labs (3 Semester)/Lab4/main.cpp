@@ -102,7 +102,10 @@ bool checkingEmail(string str, string& error) {
         }
     }
 
-    if (!symbols[0]) {
+    if (!dog){
+        error = "Ошибка: Должен присутствовать символ '@'";
+        return false;
+    }else if (!symbols[0]) {
         error = "Ошибка: Перед символом '@' должен быть хотя бы один символ";
         return false;
     } else if (!symbols[1]) {

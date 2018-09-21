@@ -8,7 +8,7 @@ void printArray(double**, int, int);
 
 int main(){
     setlocale(LC_ALL, "Russian");
-    bool flag;
+    short int flag;
     do {
         int n, m, k;
         do {
@@ -17,16 +17,16 @@ int main(){
             cin >> n;
             if (n > 100 || n < 2) {
                 flag = true;
-                cout << "Повторите ввод";
+                cout << "Повторите ввод\n";
             }
         }while (flag);
         do {
             flag = false;
             cout << "Введите число m: ";
             cin >> m;
-            if (m > 50 || n < 2) {
+            if (m > 50 || m < 2) {
                 flag = true;
-                cout << "Повторите ввод";
+                cout << "Повторите ввод\n";
             }
         }while (flag);
         double** array = new double*[n];
@@ -40,7 +40,7 @@ int main(){
         printArray(array, n, m);
         cout << "\nПовторить ввод (1/0): ";
         cin >> flag;
-    }while(flag == true);
+    }while(flag);
 }
 
 
