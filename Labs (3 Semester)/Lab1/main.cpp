@@ -17,9 +17,9 @@ int main(){
             cout << "Введите сторону квадрата: ";
             input[1] = check();
             cout << "Введите координату X: ";
-            point[0] = check();
+            cin >> point[0];
             cout << "Введите координату Y: ";
-            point[1] = check();
+            cin >> point[1];
             double temp[] = {point[0] * point[0] + point[1] * point[1], input[1] / 2};
             if (temp[0] > input[0] * input[0] && abs(point[0]) <= temp[1] && abs(point[1]) <= temp[1])
                 cout << "Точка с координатами (" << point[0] << ";" << point[1] << ") входит в указанную область";

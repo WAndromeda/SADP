@@ -23,8 +23,9 @@ int main(){
             }while (k);
             double* array = new double[n];
             inputArray(array, n);
-            cout << "¬ведите число x: ";
+            cout << "¬ведите число x (отрицательное число будет преобразовано в положительное по модулю): ";
             cin >> x;
+            x = abs(x);
             double* nums = new double[1];
             if (n > 1) {
                 nums = search(array, x, n);

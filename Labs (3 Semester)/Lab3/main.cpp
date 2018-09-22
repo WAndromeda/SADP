@@ -33,8 +33,17 @@ int main(){
         for (int i = 0 ; i < n; i++)
             array[i] = new double[m];
         inputArray(array, n, m);
-        cout << "Введите число сдвигов k: ";
-        cin >> k;
+        do {
+            flag = false;
+            cout << "Введите число сдвигов k: ";
+            cin >> k;
+            if (k < 1) {
+                flag = true;
+                cout << "Повторите ввод\n";
+            }
+        }while (flag);
+        k %= m;
+        cout << "Фактическое число сдвигов: " << k << " \n" << endl;
         printArray(array, n, m);
         shift(array, k, n, m);
         printArray(array, n, m);
