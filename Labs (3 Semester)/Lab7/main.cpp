@@ -67,7 +67,7 @@ double* integral(double a, double b, int n, double& sum){
 }
 
 void outPut(double* array, int n, double sum){
-    string str[2] = {"Номер столбца", "Пром. значение интеграла"};
+    string str[2] = {"Номер отрезка", "Пром. значение интеграла"};
     int k = str[0].size() + str[1].size() + 7;
     grid(k);
     cout << "| " << str[0] << " | " << str[1] <<  " |" << endl;
